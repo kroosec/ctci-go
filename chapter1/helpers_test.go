@@ -1,11 +1,13 @@
 package main
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
-func AssertBool(t *testing.T, input interface{}, got, want bool) {
+func AssertInputs(t *testing.T, input, got, want interface{}) {
 	t.Helper()
-	if got != want {
-		t.Fatalf("got %v want %v, given '%+v'", got, want, input)
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("got '%+v' want '%+v', given '%+v'", got, want, input)
 	}
 }
-

@@ -28,6 +28,6 @@ var inputIsPermutation []struct {
 func TestIsPermutation(t *testing.T) {
 	for _, input := range inputIsPermutation {
 		got := IsPermutation(input.first, input.second)
-		AssertBool(t, input, got, input.want)
+		AssertInputs(t, input, got, input.want)
 	}
 }
